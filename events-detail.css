@@ -1,0 +1,136 @@
+/* Add this to your events-detail.css file */
+
+/* Adjust header height to accommodate scrolling text */
+.event-category-page {
+  padding-top: 7rem; /* Increased to account for taller header */
+}
+
+/* College Logo Styles */
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.college-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* No Registration Fee Scrolling Text */
+.no-fee-announcement {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 25px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #6f9aa7, #293e41, #6f9aa7);
+  z-index: 50;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+
+
+.no-fee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  /* move one full width to the left, then repeat */
+  animation: scrollTrack 18s linear infinite;
+}
+
+.no-fee-text {
+  font-size: 1.0rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 2rem; /* horizontal gap between repeats */
+}
+
+@keyframes scrollTrack {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.day-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #e0e0e0;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* New styles for Venue and Coordinators */
+.event-info-section {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.event-info-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-cyan); /* Using a variable from style.css for consistency */
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.event-venue-text {
+  font-size: 1.1rem;
+  color: #c7d2ff;
+  margin-bottom: 1.5rem;
+}
+
+.event-coordinators-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.event-coordinators-list li {
+  background: rgba(10, 10, 25, 0.7); /* var(--card-bg) with more opacity */
+  border: 1px solid rgba(0, 247, 255, 0.15);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+}
+
+.event-coordinators-list li strong {
+  color: var(--text-primary);
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.event-coordinators-list li span {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* You can also add a bit of space between the grids if needed */
+.event-grid + .day-title {
+  margin-top: 4rem; /* 64px */
+}

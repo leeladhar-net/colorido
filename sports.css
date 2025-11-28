@@ -1,0 +1,472 @@
+/* ========== Base Page Layout for Sports ========== */
+
+/* No Registration Fee Scrolling Text */
+.no-fee-announcement {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 25px;
+  overflow: hidden;
+  background: linear-gradient(90deg, #6f9aa7, #293e41, #6f9aa7);
+  z-index: 50;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(111, 154, 167, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(111, 154, 167, 0.9), 0 0 30px rgba(41, 62, 65, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(111, 154, 167, 0.7);
+  }
+}
+
+.no-fee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  /* move one full width to the left, then repeat */
+  animation: scrollTrack 15s linear infinite;
+}
+
+.no-fee-text {
+  font-size: 1.0rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 2rem; /* horizontal gap between repeats */
+}
+
+@keyframes scrollTrack {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* College Logo Styles */
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.college-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #181c3a 0%, #050509 55%, #020204 100%);
+  color: #f8f9ff;
+}
+
+/* Page spacing under fixed header */
+.event-category-page {
+  padding: 7rem 1.25rem 3rem; /* Increased to account for taller header */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Breadcrumb */
+.event-breadcrumb {
+  font-size: 0.85rem;
+  opacity: 0.75;
+  margin-bottom: 0.75rem;
+}
+
+.event-back-link {
+  color: #c7d2ff;
+  text-decoration: none;
+  margin-right: 0.35rem;
+}
+
+.event-back-link:hover {
+  text-decoration: underline;
+}
+
+/* ========== Hero / Top Heading ========== */
+
+.event-category-hero {
+  margin-bottom: 2.5rem;
+}
+
+.event-ribbon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2dd4bf, #6366f1);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #020617;
+}
+
+.event-category-title {
+  font-size: 2.25rem;
+  margin: 0.6rem 0 0.4rem;
+  letter-spacing: 0.03em;
+}
+
+.event-category-tagline {
+  max-width: 640px;
+  font-size: 0.98rem;
+  opacity: 0.85;
+}
+
+/* ========== Section Headings (Boys / Girls) ========== */
+
+
+.event-track-title {
+  font-size: 1.4rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e5e7ff;
+}
+
+.event-track-description {
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.8;
+}
+
+/* ========== Grid Layout for Cards ========== */
+
+.event-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-auto-rows: 1fr; /* Make all rows the same height */
+}
+
+@media (min-width: 640px) {
+  .event-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ========== Sport Poster Cards ========== */
+
+.sport-card {
+  background: radial-gradient(circle at top, #1f2937 0%, #020617 65%);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+  text-align: left;
+  position: relative;
+  transition:
+    transform 0.18s ease-out,
+    box-shadow 0.18s ease-out,
+    border-color 0.18s ease-out,
+    background 0.18s ease-out;
+  height: 100%; /* Ensure cards take full height of grid row */
+}
+
+/* Image container */
+.event-card-image-container {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a0a0a; /* Add background color to fill empty space */
+  position: relative;
+}
+
+.event-card-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Changed from cover to contain */
+  width: auto;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.sport-card:hover .event-card-image {
+  transform: scale(1.05);
+}
+
+/* Content area */
+.event-card-content {
+  padding: 0.85rem 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Name at bottom */
+.sport-card-name {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.98rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+/* Tagline */
+.sport-card-tagline {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  margin-bottom: 0;
+}
+
+/* Border at bottom */
+.sport-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(15, 23, 42, 0), rgba(148, 163, 255, 0.4), rgba(15, 23, 42, 0));
+}
+
+/* Subtle glow on hover */
+.sport-card:hover {
+  transform: translateY(-4px) scale(1.01);
+  border-color: #a5b4fc;
+  box-shadow:
+    0 16px 35px rgba(15, 23, 42, 0.95),
+    0 0 18px rgba(59, 130, 246, 0.45);
+  background: radial-gradient(circle at top, #1d2441 0%, #020617 70%);
+}
+
+/* ========== Modal Styles ========== */
+
+.subevent-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(15, 23, 42, 0.9), rgba(3, 7, 18, 0.97));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem; /* Reduced padding */
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out;
+}
+
+.subevent-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.subevent-modal {
+  width: min(90vw, 900px); /* Adjusted width */
+  max-height: 85vh; /* Reduced max height for more compact look */
+  background: radial-gradient(circle at top left, #111827 0%, #020617 60%);
+  border-radius: 16px;
+  border: 1px solid rgba(129, 140, 248, 0.6);
+  box-shadow:
+    0 20px 60px rgba(15, 23, 42, 0.95),
+    0 0 32px rgba(59, 130, 246, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #e5e7eb;
+}
+
+/* Adjust modal width for different screen sizes */
+@media (min-width: 768px) {
+  .subevent-modal {
+    width: 85%; /* ~85% on mobile */
+  }
+}
+
+@media (min-width: 1024px) {
+  .subevent-modal {
+    width: 55%; /* ~55% on desktop */
+  }
+}
+
+.subevent-modal-header {
+  padding: 0.75rem 1rem; /* Reduced padding */
+  border-bottom: 1px solid rgba(148, 163, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subevent-modal-title {
+  font-size: 1.15rem; /* Slightly larger for better readability */
+  margin: 0;
+}
+
+.subevent-modal-close-btn {
+  background: transparent;
+  border: none;
+  color: #f9fafb;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+  transition:
+    background 0.16s ease-out,
+    transform 0.1s ease-out;
+}
+
+.subevent-modal-close-btn:hover {
+  background: rgba(248, 250, 252, 0.12);
+  transform: scale(1.05);
+}
+
+.subevent-modal-body {
+  padding: 0.75rem 1rem 0.5rem; /* Reduced padding */
+  overflow-y: auto;
+}
+
+.subevent-modal-tagline {
+  margin: 0 0 0.5rem; /* Reduced margin */
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Sections inside modal */
+.subevent-modal-section {
+  margin-top: 0.5rem; /* Reduced margin */
+  margin-bottom: 0.5rem; /* Reduced margin */
+}
+
+.subevent-modal-section h3 {
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  margin: 0 0 0.25rem; /* Reduced margin */
+}
+
+.subevent-rules {
+  padding-left: 1.25rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Reduced line spacing for rules */
+.subevent-rules li {
+  margin-bottom: 0.25rem; /* Reduced from 0.35rem */
+}
+
+/* Coordinators columns */
+.subevent-coordinators {
+  display: grid;
+  gap: 0.5rem 1rem; /* Reduced gap */
+}
+
+@media (min-width: 640px) {
+  .subevent-coordinators {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.subevent-coordinators ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Reduced line spacing for coordinators */
+.subevent-coordinators li {
+  margin-bottom: 0.2rem; /* Reduced from 0.25rem */
+}
+
+/* Details grid (Category / Venue & Time / Prizes) */
+.subevent-details-grid {
+  display: grid;
+  gap: 0.5rem 1rem; /* Reduced gap */
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .subevent-details-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.subevent-details-grid h3 {
+  margin-bottom: 0.2rem; /* Reduced margin */
+}
+
+/* Modal footer buttons */
+.subevent-modal-footer {
+  padding: 0.75rem 1rem 0.9rem; /* Reduced padding */
+  border-top: 1px solid rgba(148, 163, 255, 0.35);
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+/* Neon button */
+.btn-neon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #22c55e, #22c5ff);
+  color: #020617;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(34, 197, 94, 0.5);
+  transition:
+    transform 0.12s ease-out,
+    box-shadow 0.12s ease-out,
+    filter 0.12s ease-out;
+}
+
+.btn-neon:hover {
+  transform: translateY(-1px) scale(1.02);
+  filter: brightness(1.08);
+  box-shadow:
+    0 0 24px rgba(34, 197, 94, 0.7),
+    0 0 26px rgba(34, 197, 255, 0.55);
+}
+
+/* Ghost button */
+.btn-ghost {
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 255, 0.7);
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition:
+    background 0.12s ease-out,
+    color 0.12s ease-out,
+    border-color 0.12s ease-out;
+}
+
+.btn-ghost:hover {
+  background: rgba(148, 163, 255, 0.15);
+  border-color: #c7d2fe;
+}

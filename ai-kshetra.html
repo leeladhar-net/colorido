@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>COLORIDO 2K25 · AI KSHETRA (CSM)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="events-detail.css" />
+</head>
+<body>
+  <!-- Same header as main site -->
+  <header id="mainHeader" class="visible">
+    <div class="logo-lockup">
+      <span class="logo-main">R.V.R. &amp; J.C. College of Engineering (A)</span>
+      <span class="logo-sub">COLORIDO 2K25</span>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span>
+    </button>
+
+    <nav id="mainNav">
+      <a href="index.html#home">Home</a>
+      <a href="index.html#events">Events</a>
+      <a href="index.html#hospitality">Hospitality</a>
+      <a href="index.html#transportation">Transportation</a>
+      <a href="index.html#dias-plan">Dias Plan</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="event-category-page">
+    <div class="event-page-spacer"></div>
+
+    <div class="event-breadcrumb">
+      <a href="index.html#events" class="event-back-link">&larr; Back to Events</a>
+      <span class="event-breadcrumb-current">Technical &gt; AI KSHETRA (CSM)</span>
+    </div>
+
+    <section class="event-category-hero">
+      <div class="event-ribbon">
+        <span class="event-ribbon-label">Technical Events</span>
+      </div>
+      <h1 class="event-category-title">AI KSHETRA (CSM)</h1>
+      <p class="event-category-tagline">
+        Department of Computer Science &amp; Engineering (CSM) – AI‑centric events of COLORIDO 2K25.
+      </p>
+    </section>
+
+    <section class="event-track-section">
+      <header class="event-track-header">
+        <h2 class="event-track-title" id="trackTitle">AI KSHETRA (CSM)</h2>
+        <p class="event-track-description" id="trackDescription">
+          Explore Build with AI and CODEWARZ – hands‑on AI building and competitive programming challenges.
+        </p>
+      </header>
+
+      <div class="event-grid" id="subEventGrid" aria-live="polite">
+        <!-- JS injects the two cards here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable modal (same structure as TECHFUSION) -->
+  <div class="subevent-modal-overlay" id="subeventModalOverlay" hidden>
+    <div
+      class="subevent-modal"
+      id="subeventModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="subeventModalTitle"
+    >
+      <header class="subevent-modal-header">
+        <h2 class="subevent-modal-title" id="subeventModalTitle"></h2>
+        <button class="subevent-modal-close-btn" id="subeventModalClose" aria-label="Close dialog">
+          &times;
+        </button>
+      </header>
+
+      <div class="subevent-modal-body">
+        <p class="subevent-modal-tagline" id="subeventModalTagline"></p>
+
+        <section class="subevent-modal-section">
+          <h3>Rules &amp; Guidelines</h3>
+          <ol class="subevent-rules" id="subeventRules"></ol>
+        </section>
+
+        <section class="subevent-modal-section subevent-coordinators">
+          <div>
+            <h3>Student Coordinators</h3>
+            <ul id="subeventStudentCoords"></ul>
+          </div>
+          <div>
+            <h3>Staff Coordinators</h3>
+            <ul id="subeventStaffCoords"></ul>
+          </div>
+        </section>
+
+        <section class="subevent-modal-section subevent-details-grid">
+          <div>
+            <h3>Venue</h3>
+            <p id="subeventVenue"></p>
+          </div>
+          <div>
+            <h3>Date &amp; Time</h3>
+            <p id="subeventDateTime"></p>
+          </div>
+          <div>
+            <h3>Prizes</h3>
+            <p id="subeventPrizes"></p>
+          </div>
+        </section>
+      </div>
+
+      <footer class="subevent-modal-footer">
+        <a
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-neon"
+          id="subeventRegisterBtn"
+        >
+          <span>Register</span>
+        </a>
+        <button class="btn-ghost subevent-modal-close-btn" id="subeventModalCloseFooter">
+          Close
+        </button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="ai-kshetra.js"></script>
+</body>
+</html>
